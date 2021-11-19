@@ -74,6 +74,20 @@ jobs:
       - attach_workspace:
           at: ~/
       - run: cat ~/output.txt     
+  
+  print_hello_on_error:
+    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
+    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
+    docker:
+      - image: circleci/node:13.8.0
+    # Add steps to the job
+    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run: cat ~/output1.txt     
+      - run: echo "Hello Error"
+          when: on_fail
       
 
 # Invoke jobs via workflows
@@ -88,3 +102,4 @@ workflows:
       - print_hello_world_output:
           requires:
             - save_hello_world_output
+      - print_hello_on_error
