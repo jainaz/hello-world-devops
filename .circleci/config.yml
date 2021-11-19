@@ -83,7 +83,7 @@ jobs:
 workflows:
   say-hello-workflow:
     jobs:
-      - say-hello
+      - run-command
       - print_hello
       - print_world
       - save_hello_world_output
