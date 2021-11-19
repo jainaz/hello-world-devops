@@ -86,7 +86,8 @@ jobs:
       - attach_workspace:
           at: ~/
       - run: cat ~/output1.txt     
-      - run: echo "Hello Error"
+      - run: 
+          command: echo "Hello Error"
           when: on_fail
       
 
