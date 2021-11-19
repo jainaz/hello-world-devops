@@ -54,8 +54,7 @@ jobs:
     persist_to_workspace:
       root: /tmp/workspace
       paths:
-        - target/application.jar
-        - build/*
+        - output.txt
     steps:
       - checkout
       - run:
