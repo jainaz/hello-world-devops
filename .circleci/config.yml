@@ -56,7 +56,7 @@ jobs:
       - run:
           command: echo "Hello World" >> output.txt     
       - persist_to_workspace:
-          root: /tmp/dir
+          root: ~
           paths:
             - output.txt
 
